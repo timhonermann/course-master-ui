@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
+import { MatButton } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
 
 @Component({
-  imports: [NxWelcomeComponent, RouterModule],
+  imports: [RouterModule, MatButton],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  title = 'course-master-ui';
-}
+export class AppComponent {}
