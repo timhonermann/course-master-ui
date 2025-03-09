@@ -1,0 +1,9 @@
+<cm-shell-layout>
+  <cm-menu
+    slot="menu"
+    [menuItems]="menuItems()"
+    (logoClicked)="onLogoClicked()"
+  />
+
+  <router-outlet />
+</cm-shell-layout>

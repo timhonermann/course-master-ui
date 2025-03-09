@@ -1,9 +1,8 @@
+import baseConfig from './eslint.base.config.mjs';
 import nx from '@nx/eslint-plugin';
 
 export default [
-  ...nx.configs['flat/base'],
-  ...nx.configs['flat/typescript'],
-  ...nx.configs['flat/javascript'],
+  ...baseConfig,
   {
     ignores: ['**/dist'],
   },
@@ -30,7 +29,7 @@ export default [
         'error',
         {
           type: 'attribute',
-          prefix: 'app',
+          prefix: 'cm',
           style: 'camelCase',
         },
       ],
@@ -38,7 +37,7 @@ export default [
         'error',
         {
           type: 'element',
-          prefix: 'app',
+          prefix: 'cm',
           style: 'kebab-case',
         },
       ],
