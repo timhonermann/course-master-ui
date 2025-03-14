@@ -18,8 +18,14 @@
       "@course-master/features/course/feature": [
         "libs/features/course/feature/src/index.ts"
       ],
+      "@course-master/features/settings/domain": [
+        "libs/features/settings/domain/src/index.ts"
+      ],
       "@course-master/features/settings/feature": [
         "libs/features/settings/feature/src/index.ts"
+      ],
+      "@course-master/features/settings/model": [
+        "libs/features/settings/model/src/index.ts"
       ],
       "@course-master/features/shell/domain": [
         "libs/features/shell/domain/src/index.ts"
@@ -36,7 +42,13 @@
       "@course-master/features/shell/ui": [
         "libs/features/shell/ui/src/index.ts"
       ],
+      "@course-master/shared/config/model": [
+        "libs/shared/config/model/src/index.ts"
+      ],
       "@course-master/shared/header/ui": ["libs/shared/header/ui/src/index.ts"],
+      "@course-master/shared/http/domain": [
+        "libs/shared/http/domain/src/index.ts"
+      ],
       "@course-master/shared/icon/domain": [
         "libs/shared/icon/domain/src/index.ts"
       ],

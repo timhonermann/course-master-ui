@@ -1,4 +1,4 @@
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import {
   ApplicationConfig,
   inject,
@@ -6,14 +6,19 @@ import {
   provideZoneChangeDetection,
 } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { IconService } from '../../libs/shared/icon/domain/src/lib/service/icon.service';
+import { APP_CONFIG, AppConfig } from '@course-master/shared/config/model';
+import { serverUrlInterceptor } from '@course-master/shared/http/domain';
+import { IconService } from '@course-master/shared/icon/domain';
 import { appRoutes } from './app.routes';
 
-export const appConfig: ApplicationConfig = {
-  providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(appRoutes),
-    provideHttpClient(),
-    provideAppInitializer(() => inject(IconService).init()),
-  ],
-};
+export function getAppConfig(config: AppConfig): ApplicationConfig {
+  return {
+    providers: [
+      provideZoneChangeDetection({ eventCoalescing: true }),
+      provideRouter(appRoutes),
+      provideHttpClient(withInterceptors([serverUrlInterceptor])),
+      provideAppInitializer(() => inject(IconService).init()),
+      { provide: APP_CONFIG, useValue: config },
+    ],
+  };
+}

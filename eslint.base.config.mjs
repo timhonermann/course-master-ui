@@ -60,7 +60,11 @@ export default [
             },
             {
               sourceTag: 'type:app',
-              onlyDependOnLibsWithTags: ['type:feature', 'type:model'],
+              onlyDependOnLibsWithTags: [
+                'type:feature',
+                'type:model',
+                'type:domain',
+              ],
             },
             {
               sourceTag: 'type:model',
