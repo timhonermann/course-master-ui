@@ -1,6 +1,12 @@
 import { provideHttpClient } from '@angular/common/http';
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import {
+  ApplicationConfig,
+  inject,
+  provideAppInitializer,
+  provideZoneChangeDetection,
+} from '@angular/core';
 import { provideRouter } from '@angular/router';
+import { IconService } from '../../libs/shared/icon/domain/src/lib/service/icon.service';
 import { appRoutes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
@@ -8,5 +14,6 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(appRoutes),
     provideHttpClient(),
+    provideAppInitializer(() => inject(IconService).init()),
   ],
 };

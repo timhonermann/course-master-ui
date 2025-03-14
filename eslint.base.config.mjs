@@ -17,6 +17,14 @@ export default [
           allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?js$'],
           depConstraints: [
             {
+              sourceTag: 'feature:settings',
+              onlyDependOnLibsWithTags: ['feature:settings', 'feature:shared'],
+            },
+            {
+              sourceTag: 'feature:course',
+              onlyDependOnLibsWithTags: ['feature:course', 'feature:shared'],
+            },
+            {
               sourceTag: 'feature:shell',
               onlyDependOnLibsWithTags: ['feature:shell', 'feature:shared'],
             },
@@ -52,7 +60,7 @@ export default [
             },
             {
               sourceTag: 'type:app',
-              onlyDependOnLibsWithTags: ['type:feature'],
+              onlyDependOnLibsWithTags: ['type:feature', 'type:model'],
             },
             {
               sourceTag: 'type:model',
