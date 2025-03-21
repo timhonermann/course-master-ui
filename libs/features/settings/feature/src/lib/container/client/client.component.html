@@ -1,4 +1,4 @@
-<h3>Client</h3>
+<cm-setting-title title="Clients" />
 
 <mat-form-field>
   <mat-label>Add Client</mat-label>
@@ -9,6 +9,4 @@
   />
 </mat-form-field>
 
-@for (client of clients(); track client.id) {
-  <div>{{ client.id }} - {{ client.name }}</div>
-}
+<cm-client-list [clients]="clients()" />

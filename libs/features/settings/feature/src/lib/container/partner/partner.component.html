@@ -1,0 +1,14 @@
+<cm-setting-title title="Partners" />
+
+<mat-form-field>
+  <mat-label>Add Partner</mat-label>
+  <input
+    matInput
+    [formControl]="partnerControl"
+    (keydown.enter)="createPartner()"
+  />
+</mat-form-field>
+
+@for (partner of partners(); track partner.id) {
+  <div>{{ partner.id }} - {{ partner.name }}</div>
+}

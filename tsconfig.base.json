@@ -27,6 +27,9 @@
       "@course-master/features/settings/model": [
         "libs/features/settings/model/src/index.ts"
       ],
+      "@course-master/features/settings/ui": [
+        "libs/features/settings/ui/src/index.ts"
+      ],
       "@course-master/features/shell/domain": [
         "libs/features/shell/domain/src/index.ts"
       ],

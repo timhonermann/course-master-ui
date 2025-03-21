@@ -27,6 +27,7 @@ export const ClientStore = signalStore(
 
     create: rxMethod<string>(
       pipe(
+        map((value) => value.trim()),
         filter(Boolean),
         map((name): ClientCreation => ({ name })),
         exhaustMap((clientCreation) =>
