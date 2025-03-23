@@ -1,0 +1,8 @@
+<mat-form-field>
+  <mat-label>Add Client</mat-label>
+  <input
+    matInput
+    [formControl]="clientControl"
+    (keydown.enter)="onCreateClientTriggered()"
+  />
+</mat-form-field>

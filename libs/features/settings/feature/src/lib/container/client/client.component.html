@@ -1,12 +1,5 @@
 <cm-setting-title title="Clients" />
 
-<mat-form-field>
-  <mat-label>Add Client</mat-label>
-  <input
-    matInput
-    [formControl]="clientControl"
-    (keydown.enter)="createClient()"
-  />
-</mat-form-field>
+<cm-client-create-form (clientCreationTriggered)="createClient($event)" />
 
 <cm-client-list [clients]="clients()" />

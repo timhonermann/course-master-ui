@@ -1,21 +1,17 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MatFormField, MatLabel } from '@angular/material/form-field';
-import { MatInput } from '@angular/material/input';
 import { ClientStore } from '@course-master/features/settings/domain';
-import { ClientListComponent, SettingTitleComponent } from '@course-master/features/settings/ui';
-import { MatCard, MatCardActions, MatCardHeader, MatCardSubtitle, MatCardTitle } from '@angular/material/card';
-import { MatButton } from '@angular/material/button';
+import {
+  ClientCreateFormComponent,
+  ClientListComponent,
+  SettingTitleComponent,
+} from '@course-master/features/settings/ui';
 
 @Component({
   selector: 'cm-client',
   imports: [
-    MatLabel,
-    MatFormField,
-    MatInput,
-    ReactiveFormsModule,
     SettingTitleComponent,
     ClientListComponent,
+    ClientCreateFormComponent,
   ],
   templateUrl: './client.component.html',
   styleUrl: './client.component.scss',
@@ -27,11 +23,7 @@ export class ClientComponent {
 
   readonly clients = this.#clientStore.entities;
 
-  readonly clientControl = new FormControl('', [Validators.required]);
-
-  createClient(): void {
-    const name = this.clientControl.value ?? '';
-
+  createClient(name: string): void {
     this.#clientStore.create(name);
   }
 }

@@ -1,0 +1,8 @@
+<mat-form-field>
+  <mat-label>Add Partner</mat-label>
+  <input
+    matInput
+    [formControl]="partnerControl"
+    (keydown.enter)="onCreatePartnerTriggered()"
+  />
+</mat-form-field>
