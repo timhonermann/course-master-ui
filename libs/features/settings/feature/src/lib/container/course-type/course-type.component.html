@@ -1,0 +1,7 @@
+<cm-setting-title title="Course Types" />
+
+<cm-course-type-create-form
+  (courseTypeCreationTriggered)="createCourseType($event)"
+/>
+
+<cm-course-type-list [courseTypes]="courseTypes()" />

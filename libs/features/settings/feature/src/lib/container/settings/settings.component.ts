@@ -4,6 +4,7 @@ import { HeaderComponent } from '@course-master/shared/header/ui';
 import { ClientComponent } from '../client/client.component';
 import { PartnerComponent } from '../partner/partner.component';
 import { SettingsLayoutComponent } from '@course-master/features/settings/ui';
+import { CourseTypeComponent } from '../course-type/course-type.component';
 
 @Component({
   selector: 'cm-settings',
@@ -13,6 +14,7 @@ import { SettingsLayoutComponent } from '@course-master/features/settings/ui';
     ClientComponent,
     PartnerComponent,
     SettingsLayoutComponent,
+    CourseTypeComponent,
   ],
   templateUrl: './settings.component.html',
   styleUrl: './settings.component.scss',
