@@ -1,6 +1,11 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Partner } from '@course-master/features/settings/model';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  input,
+  output,
+} from '@angular/core';
+import { MatButton } from '@angular/material/button';
 import {
   MatCard,
   MatCardActions,
@@ -8,7 +13,7 @@ import {
   MatCardSubtitle,
   MatCardTitle,
 } from '@angular/material/card';
-import { MatButton } from '@angular/material/button';
+import { Partner } from '@course-master/features/settings/model';
 
 @Component({
   selector: 'cm-partner-card',
@@ -27,4 +32,10 @@ import { MatButton } from '@angular/material/button';
 })
 export class PartnerCardComponent {
   readonly partner = input.required<Partner>();
+
+  readonly deleteClicked = output();
+
+  onDeleteClicked(): void {
+    this.deleteClicked.emit();
+  }
 }

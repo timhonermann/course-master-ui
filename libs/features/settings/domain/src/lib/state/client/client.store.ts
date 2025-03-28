@@ -1,15 +1,16 @@
 import { inject } from '@angular/core';
 import { Client, ClientCreation } from '@course-master/features/settings/model';
+import { ClientService } from '@course-master/shared/client/domain';
 import { tapResponse } from '@ngrx/operators';
 import { patchState, signalStore, withHooks, withMethods } from '@ngrx/signals';
 import {
   addEntity,
+  removeEntity,
   setAllEntities,
   withEntities,
 } from '@ngrx/signals/entities';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { exhaustMap, filter, map, pipe } from 'rxjs';
-import { ClientService } from '../../service/client.service';
 
 export const ClientStore = signalStore(
   withEntities<Client>(),
@@ -37,6 +38,17 @@ export const ClientStore = signalStore(
               error: () => console.error('Error creating client'),
             }),
           ),
+        ),
+      ),
+    ),
+
+    delete: rxMethod<string>(
+      exhaustMap((id) =>
+        clientService.delete(id).pipe(
+          tapResponse({
+            next: () => patchState(store, removeEntity(id)),
+            error: () => console.error('Error deleting client'),
+          }),
         ),
       ),
     ),

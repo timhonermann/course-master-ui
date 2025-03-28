@@ -1,3 +1,6 @@
 @for (partner of partners(); track partner.id) {
-  <cm-partner-card [partner]="partner" />
+  <cm-partner-card
+    [partner]="partner"
+    (deleteClicked)="onDeleteClicked(partner.id)"
+  />
 }

@@ -4,4 +4,7 @@
   (courseTypeCreationTriggered)="createCourseType($event)"
 />
 
-<cm-course-type-list [courseTypes]="courseTypes()" />
+<cm-course-type-list
+  [courseTypes]="courseTypes()"
+  (deleteClicked)="deleteCourseType($event)"
+/>

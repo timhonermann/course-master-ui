@@ -26,4 +26,8 @@ export class PartnerComponent {
   createPartner(name: string): void {
     this.#partnerStore.create(name);
   }
+
+  deletePartner(id: string): void {
+    this.#partnerStore.delete(id);
+  }
 }

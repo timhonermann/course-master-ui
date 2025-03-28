@@ -1,5 +1,10 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  input,
+  output,
+} from '@angular/core';
 import { Partner } from '@course-master/features/settings/model';
 import { PartnerCardComponent } from '../partner-card/partner-card.component';
 
@@ -12,4 +17,10 @@ import { PartnerCardComponent } from '../partner-card/partner-card.component';
 })
 export class PartnerListComponent {
   readonly partners = input.required<Partner[]>();
+
+  readonly deleteClicked = output<string>();
+
+  onDeleteClicked(id: string): void {
+    this.deleteClicked.emit(id);
+  }
 }

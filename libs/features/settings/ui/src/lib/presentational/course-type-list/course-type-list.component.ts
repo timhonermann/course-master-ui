@@ -1,5 +1,10 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  input,
+  output,
+} from '@angular/core';
 import { CourseType } from '@course-master/features/settings/model';
 import { CourseTypeCardComponent } from '../course-type-card/course-type-card.component';
 
@@ -12,4 +17,10 @@ import { CourseTypeCardComponent } from '../course-type-card/course-type-card.co
 })
 export class CourseTypeListComponent {
   readonly courseTypes = input.required<CourseType[]>();
+
+  readonly deleteClicked = output<string>();
+
+  onDeleteClicked(id: string): void {
+    this.deleteClicked.emit(id);
+  }
 }

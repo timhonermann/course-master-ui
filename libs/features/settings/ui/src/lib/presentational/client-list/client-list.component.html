@@ -1,3 +1,6 @@
 @for (client of clients(); track client.id) {
-  <cm-client-card [client]="client" />
+  <cm-client-card
+    [client]="client"
+    (deleteClicked)="onDeleteClicked(client.id)"
+  />
 }

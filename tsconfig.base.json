@@ -15,17 +15,20 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@course-master/features/course/domain": [
+        "libs/features/course/domain/src/index.ts"
+      ],
       "@course-master/features/course/feature": [
         "libs/features/course/feature/src/index.ts"
+      ],
+      "@course-master/features/course/model": [
+        "libs/features/course/model/src/index.ts"
       ],
       "@course-master/features/settings/domain": [
         "libs/features/settings/domain/src/index.ts"
       ],
       "@course-master/features/settings/feature": [
         "libs/features/settings/feature/src/index.ts"
-      ],
-      "@course-master/features/settings/model": [
-        "libs/features/settings/model/src/index.ts"
       ],
       "@course-master/features/settings/ui": [
         "libs/features/settings/ui/src/index.ts"
@@ -45,8 +48,20 @@
       "@course-master/features/shell/ui": [
         "libs/features/shell/ui/src/index.ts"
       ],
+      "@course-master/shared/client/domain": [
+        "libs/shared/client/domain/src/index.ts"
+      ],
+      "@course-master/shared/client/model": [
+        "libs/shared/client/model/src/index.ts"
+      ],
       "@course-master/shared/config/model": [
         "libs/shared/config/model/src/index.ts"
+      ],
+      "@course-master/shared/course-type/domain": [
+        "libs/shared/course-type/domain/src/index.ts"
+      ],
+      "@course-master/shared/course-type/model": [
+        "libs/shared/course-type/model/src/index.ts"
       ],
       "@course-master/shared/header/ui": ["libs/shared/header/ui/src/index.ts"],
       "@course-master/shared/http/domain": [
@@ -57,6 +72,12 @@
       ],
       "@course-master/shared/icon/model": [
         "libs/shared/icon/model/src/index.ts"
+      ],
+      "@course-master/shared/partner/domain": [
+        "libs/shared/partner/domain/src/index.ts"
+      ],
+      "@course-master/shared/partner/model": [
+        "libs/shared/partner/model/src/index.ts"
       ],
       "@course-master/shared/routing/model": [
         "libs/shared/routing/model/src/index.ts"

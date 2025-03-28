@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CourseTypeStore } from '@course-master/features/settings/domain';
 import {
   CourseTypeCreateFormComponent,
@@ -27,5 +27,9 @@ export class CourseTypeComponent {
 
   createCourseType(name: string): void {
     this.#courseTypeStore.create(name);
+  }
+
+  deleteCourseType(id: string): void {
+    this.#courseTypeStore.delete(id);
   }
 }

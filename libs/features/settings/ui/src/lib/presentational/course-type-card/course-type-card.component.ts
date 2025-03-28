@@ -1,5 +1,10 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  input,
+  output,
+} from '@angular/core';
 import { MatButton } from '@angular/material/button';
 import {
   MatCard,
@@ -27,4 +32,10 @@ import { CourseType } from '@course-master/features/settings/model';
 })
 export class CourseTypeCardComponent {
   readonly courseType = input.required<CourseType>();
+
+  readonly deleteClicked = output();
+
+  onDeleteClicked(): void {
+    this.deleteClicked.emit();
+  }
 }

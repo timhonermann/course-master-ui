@@ -2,4 +2,4 @@
 
 <cm-client-create-form (clientCreationTriggered)="createClient($event)" />
 
-<cm-client-list [clients]="clients()" />
+<cm-client-list [clients]="clients()" (deleteClicked)="deleteClient($event)" />

@@ -1,7 +1,18 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  input,
+  output,
+} from '@angular/core';
 import { MatButton } from '@angular/material/button';
-import { MatCard, MatCardActions, MatCardHeader, MatCardSubtitle, MatCardTitle } from '@angular/material/card';
+import {
+  MatCard,
+  MatCardActions,
+  MatCardHeader,
+  MatCardSubtitle,
+  MatCardTitle,
+} from '@angular/material/card';
 import { Client } from '@course-master/features/settings/model';
 
 @Component({
@@ -21,4 +32,10 @@ import { Client } from '@course-master/features/settings/model';
 })
 export class ClientCardComponent {
   readonly client = input.required<Client>();
+
+  readonly deleteClicked = output();
+
+  onDeleteClicked(): void {
+    this.deleteClicked.emit();
+  }
 }

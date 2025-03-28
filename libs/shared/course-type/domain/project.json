@@ -1,0 +1,20 @@
+{
+  "name": "libs-shared-course-type-domain",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/course-type/domain/src",
+  "prefix": "cm",
+  "projectType": "library",
+  "tags": ["feature:shared", "type:domain"],
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/shared/course-type/domain/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

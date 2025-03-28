@@ -1,18 +1,19 @@
-import { patchState, signalStore, withHooks, withMethods } from '@ngrx/signals';
-import {
-  addEntity,
-  setAllEntities,
-  withEntities,
-} from '@ngrx/signals/entities';
+import { inject } from '@angular/core';
 import {
   CourseType,
   CourseTypeCreation,
 } from '@course-master/features/settings/model';
-import { inject } from '@angular/core';
-import { CourseTypeService } from '../../service/course-type.service';
+import { CourseTypeService } from '@course-master/shared/course-type/domain';
+import { tapResponse } from '@ngrx/operators';
+import { patchState, signalStore, withHooks, withMethods } from '@ngrx/signals';
+import {
+  addEntity,
+  removeEntity,
+  setAllEntities,
+  withEntities,
+} from '@ngrx/signals/entities';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { exhaustMap, filter, map, pipe } from 'rxjs';
-import { tapResponse } from '@ngrx/operators';
 
 export const CourseTypeStore = signalStore(
   withEntities<CourseType>(),
@@ -41,6 +42,17 @@ export const CourseTypeStore = signalStore(
               error: () => console.error('Error creating course type'),
             }),
           ),
+        ),
+      ),
+    ),
+
+    delete: rxMethod<string>(
+      exhaustMap((id) =>
+        courseTypeService.delete(id).pipe(
+          tapResponse({
+            next: () => patchState(store, removeEntity(id)),
+            error: () => console.error('Error deleting course type'),
+          }),
         ),
       ),
     ),

@@ -26,4 +26,8 @@ export class ClientComponent {
   createClient(name: string): void {
     this.#clientStore.create(name);
   }
+
+  deleteClient(id: string): void {
+    this.#clientStore.delete(id);
+  }
 }

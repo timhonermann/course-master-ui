@@ -52,7 +52,11 @@ export default [
             },
             {
               sourceTag: 'type:domain',
-              onlyDependOnLibsWithTags: ['type:util', 'type:model'],
+              onlyDependOnLibsWithTags: [
+                'type:domain',
+                'type:util',
+                'type:model',
+              ],
             },
             {
               sourceTag: 'type:util',
@@ -72,7 +76,7 @@ export default [
             },
             {
               sourceTag: 'type:layout',
-              onlyDependOnLibsWithTags: [],
+              onlyDependOnLibsWithTags: ['type:layout'],
             },
           ],
         },

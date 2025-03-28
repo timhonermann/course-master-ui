@@ -1,3 +1,6 @@
 @for (courseType of courseTypes(); track courseType.id) {
-  <cm-course-type-card [courseType]="courseType" />
+  <cm-course-type-card
+    [courseType]="courseType"
+    (deleteClicked)="onDeleteClicked(courseType.id)"
+  />
 }

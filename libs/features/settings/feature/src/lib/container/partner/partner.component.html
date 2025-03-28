@@ -2,4 +2,7 @@
 
 <cm-partner-create-form (partnerCreationTriggered)="createPartner($event)" />
 
-<cm-partner-list [partners]="partners()" />
+<cm-partner-list
+  [partners]="partners()"
+  (deleteClicked)="deletePartner($event)"
+/>
