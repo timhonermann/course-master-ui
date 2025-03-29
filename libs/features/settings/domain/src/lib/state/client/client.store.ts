@@ -1,6 +1,6 @@
 import { inject } from '@angular/core';
-import { Client, ClientCreation } from '@course-master/features/settings/model';
 import { ClientService } from '@course-master/shared/client/domain';
+import { Client, ClientCreation } from '@course-master/shared/client/model';
 import { tapResponse } from '@ngrx/operators';
 import { patchState, signalStore, withHooks, withMethods } from '@ngrx/signals';
 import {

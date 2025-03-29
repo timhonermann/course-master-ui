@@ -1,9 +1,9 @@
 import { inject } from '@angular/core';
+import { CourseTypeService } from '@course-master/shared/course-type/domain';
 import {
   CourseType,
   CourseTypeCreation,
-} from '@course-master/features/settings/model';
-import { CourseTypeService } from '@course-master/shared/course-type/domain';
+} from '@course-master/shared/course-type/model';
 import { tapResponse } from '@ngrx/operators';
 import { patchState, signalStore, withHooks, withMethods } from '@ngrx/signals';
 import {

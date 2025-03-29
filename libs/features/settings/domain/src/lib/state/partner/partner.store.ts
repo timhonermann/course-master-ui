@@ -1,9 +1,6 @@
 import { inject } from '@angular/core';
-import {
-  Partner,
-  PartnerCreation,
-} from '@course-master/features/settings/model';
 import { PartnerService } from '@course-master/shared/partner/domain';
+import { Partner, PartnerCreation } from '@course-master/shared/partner/model';
 import { tapResponse } from '@ngrx/operators';
 import { patchState, signalStore, withHooks, withMethods } from '@ngrx/signals';
 import {

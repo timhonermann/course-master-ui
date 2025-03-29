@@ -5,7 +5,7 @@ import {
   input,
   output,
 } from '@angular/core';
-import { CourseType } from '@course-master/features/settings/model';
+import { CourseType } from '@course-master/shared/course-type/model';
 import { CourseTypeCardComponent } from '../course-type-card/course-type-card.component';
 
 @Component({

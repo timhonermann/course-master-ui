@@ -13,7 +13,7 @@ import {
   MatCardSubtitle,
   MatCardTitle,
 } from '@angular/material/card';
-import { CourseType } from '@course-master/features/settings/model';
+import { CourseType } from '@course-master/shared/course-type/model';
 
 @Component({
   selector: 'cm-course-type-card',

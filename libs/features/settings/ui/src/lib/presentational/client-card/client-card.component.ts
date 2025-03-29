@@ -13,7 +13,7 @@ import {
   MatCardSubtitle,
   MatCardTitle,
 } from '@angular/material/card';
-import { Client } from '@course-master/features/settings/model';
+import { Client } from '@course-master/shared/client/model';
 
 @Component({
   selector: 'cm-client-card',

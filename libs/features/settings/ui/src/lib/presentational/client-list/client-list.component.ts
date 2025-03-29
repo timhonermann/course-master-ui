@@ -5,7 +5,7 @@ import {
   input,
   output,
 } from '@angular/core';
-import { Client } from '@course-master/features/settings/model';
+import { Client } from '@course-master/shared/client/model';
 import { ClientCardComponent } from '../client-card/client-card.component';
 
 @Component({
